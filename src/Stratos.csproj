@@ -70,6 +70,10 @@
     <Compile Include="Service\IChocolateyService.cs" />
     <Compile Include="Model\NuGetPackage.cs" />
     <Compile Include="StratosSelfHost.cs" />
+    <Compile Include="Service\ChocolateyService.cs" />
+    <Compile Include="Module\ChocolateyModule.cs" />
+    <Compile Include="Module\PingModule.cs" />
+    <Compile Include="BootStrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />
