@@ -74,6 +74,10 @@
     <Compile Include="Module\ChocolateyModule.cs" />
     <Compile Include="Module\PingModule.cs" />
     <Compile Include="BootStrapper.cs" />
+    <Compile Include="Service\Command.cs" />
+    <Compile Include="Service\ICommand.cs" />
+    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\" />

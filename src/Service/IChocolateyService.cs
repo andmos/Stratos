@@ -1,11 +1,12 @@
-﻿using System;
+﻿using NuGet;
+using System;
 using System.Collections.Generic;
 
 namespace Stratos
 {
 	public interface IChocolateyService
 	{
-		int ChocoVersion();
+		SemanticVersion ChocoVersion();
 		IEnumerable<NuGetPackage> InstalledPackages(); 
 	}
 }
