@@ -1,7 +1,6 @@
-﻿using System;
-using Nancy;
+﻿using Nancy;
 
-namespace Stratos
+namespace Stratos.Module
 {
 	public class PingModule : NancyModule
 	{

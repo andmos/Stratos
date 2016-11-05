@@ -1,8 +1,9 @@
 ﻿using System;
-using NuGet;
 using System.Collections.Generic;
+using NuGet;
+using Stratos.Model;
 
-namespace Stratos
+namespace Stratos.Service
 {
 	public class ChocolateyService : IChocolateyService
 	{
@@ -17,7 +18,7 @@ namespace Stratos
 		{
 			try
 			{
-				var version = SemanticVersion.Parse(m_command.Execute("choco", "--version", true));
+				var version = SemanticVersion.Parse(m_command.Execute("choco", "--version", true, true));
 				return version;
 			}
 			catch (Exception ex)

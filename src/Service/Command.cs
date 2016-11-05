@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Stratos
+namespace Stratos.Service
 {
 	public class Command : ICommand
 	{
@@ -18,8 +18,9 @@ namespace Stratos
 
 		private static ProcessStartInfo CreateProcessStartInfo(string commandPath, string arguments)
 		{
-			var startInformation = new ProcessStartInfo(StringUtils.Quote(commandPath));
-			startInformation.CreateNoWindow = true;
+            var startInformation = new ProcessStartInfo(StringUtils.Quote(commandPath));
+
+            startInformation.CreateNoWindow = true;
 			startInformation.Arguments = arguments;
 			startInformation.UseShellExecute = false;
 			startInformation.RedirectStandardOutput = true;
@@ -71,7 +72,7 @@ namespace Stratos
 		}
 	}
 
-	public static partial class Write
+	public static class Write
 	{
 		public static void Error(string message, bool newline = true)
 		{

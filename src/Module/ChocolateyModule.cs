@@ -1,8 +1,7 @@
-﻿using System;
-using Nancy;
-using NuGet;
+﻿using Nancy;
+using Stratos.Service;
 
-namespace Stratos
+namespace Stratos.Module
 {
 	public class ChocolateyModule : NancyModule
 	{
@@ -16,14 +15,7 @@ namespace Stratos
 			Get["/chocolateyVersion"] = parameters =>
 			{
 				var chocoVersion = m_chocoService.ChocoVersion();
-				if (chocoVersion != Constants.EmptySemanticVersion)
-				{
-					return Response.AsJson(chocoVersion);
-				}
-				else 
-				{
-					return Response.AsJson("Can't find Chocolatey Version, is Chocolatey installed or missing from path?");
-				}
+			    return Response.AsJson(chocoVersion != Constants.EmptySemanticVersion ? chocoVersion.ToNormalizedString() : "Can't find Chocolatey Version, is Chocolatey installed or missing from path?");
 			};
 			
 		}

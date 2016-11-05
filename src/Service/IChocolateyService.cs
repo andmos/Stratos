@@ -1,8 +1,8 @@
-﻿using NuGet;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using NuGet;
+using Stratos.Model;
 
-namespace Stratos
+namespace Stratos.Service
 {
 	public interface IChocolateyService
 	{

@@ -1,5 +1,6 @@
 ﻿using System;
 using LightInject;
+using Stratos.Service;
 
 namespace Stratos
 {

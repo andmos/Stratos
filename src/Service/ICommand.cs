@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace Stratos
+﻿namespace Stratos.Service
 {
 	public interface ICommand
 	{

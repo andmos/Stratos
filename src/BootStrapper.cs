@@ -6,9 +6,6 @@ namespace Stratos
 {
 	public class BootStrapper : LightInjectNancyBootstrapper
 	{
-		protected override IRootPathProvider RootPathProvider
-		{
-			get { return new Nancy.Hosting.Self.FileSystemRootPathProvider(); }
-		}
+		protected override IRootPathProvider RootPathProvider => new Nancy.Hosting.Self.FileSystemRootPathProvider();
 	}
 }

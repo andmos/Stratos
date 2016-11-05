@@ -1,6 +1,6 @@
-﻿using System;
-using NuGet;
-namespace Stratos
+﻿using NuGet;
+
+namespace Stratos.Model
 {
 	public class NuGetPackage
 	{
