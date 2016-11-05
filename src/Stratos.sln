@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratos", "Stratos.csproj", "{DC430AFA-9F91-4429-A0FA-77867D98B718}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestStratos", "TestStratos\TestStratos.csproj", "{13E8AB5D-2C43-4BAE-90B4-BD6DB05A9F2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{DC430AFA-9F91-4429-A0FA-77867D98B718}.Debug|x86.Build.0 = Debug|x86
 		{DC430AFA-9F91-4429-A0FA-77867D98B718}.Release|x86.ActiveCfg = Release|x86
 		{DC430AFA-9F91-4429-A0FA-77867D98B718}.Release|x86.Build.0 = Release|x86
+		{13E8AB5D-2C43-4BAE-90B4-BD6DB05A9F2E}.Debug|x86.ActiveCfg = Debug|x86
+		{13E8AB5D-2C43-4BAE-90B4-BD6DB05A9F2E}.Debug|x86.Build.0 = Debug|x86
+		{13E8AB5D-2C43-4BAE-90B4-BD6DB05A9F2E}.Release|x86.ActiveCfg = Release|x86
+		{13E8AB5D-2C43-4BAE-90B4-BD6DB05A9F2E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
