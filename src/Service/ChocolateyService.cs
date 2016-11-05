@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NuGet;
+using NuGet.Resources;
 using Stratos.Model;
 
 namespace Stratos.Service
@@ -44,10 +45,18 @@ namespace Stratos.Service
 		{
 			var packages = new List<NuGetPackage>();
 			var rawPackageOutput = outputString.Split('\n');
-			foreach (var textString in rawPackageOutput) 
+			foreach (var textString in rawPackageOutput)
 			{
-				var packageSplit = textString.Split(null);
-				packages.Add(new NuGetPackage { PackageName = packageSplit[0], Version = SemanticVersion.Parse(rawPackageOutput[1]) });
+                var packageSplit = textString.Split(' ');
+                try
+			    {
+                    packages.Add(new NuGetPackage { PackageName = packageSplit[0], Version = SemanticVersion.Parse(packageSplit[1]) });
+                }
+			    catch (Exception ex)
+			    {
+			        // Should logg this or something.
+			    } 
+               
 			}
 			return packages;
 
