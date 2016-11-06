@@ -9,9 +9,9 @@ namespace Stratos.Service
 {
 	public class ChocolateyService : IChocolateyService
 	{
-		private readonly ICommand m_command; 
+		private readonly ICommandService m_command; 
 
-		public ChocolateyService(ICommand command) 
+		public ChocolateyService(ICommandService command) 
 		{
 			m_command = command; 
 		}

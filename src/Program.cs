@@ -23,7 +23,7 @@ namespace Stratos
 						c.OpenFirewallPortsOnInstall(firewallRuleName: "StratosService");
 					});
 				});
-			
+				
 				x.StartAutomatically();
 				x.SetServiceName("StratosService");
 				x.SetDisplayName("StratosService");

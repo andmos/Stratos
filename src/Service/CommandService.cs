@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Stratos.Service
 {
-	public class Command : ICommand
+	public class CommandService : ICommandService
 	{
 		
 		public string Execute(string commandPath, string arguments, bool quiet = false, bool returnOutput = false)
@@ -105,7 +105,7 @@ namespace Stratos.Service
 		}
 	}
 
-	public static partial class StringUtils
+	public static class StringUtils
 	{
 		public static string Quote(string value)
 		{
