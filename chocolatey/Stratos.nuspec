@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>stratos</id>
+    <version>0.1.0</version>
+    <title>Stratos</title>
+    <authors>Andreas Mosti</authors>
+    <owners>Andreas Mosti</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</description>
+    <summary>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</summary>
+    <language>nb-NO</language>
+    <tags>Stratos NuGet Chocolatey service</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="chocolateyInstall.ps1" target="tools/chocolateyInstall.ps1" />
+    <file src="chocolateyUninstall.ps1" target="tools/chocolateyUninstall.ps1" />
+    
+    <file src="LightInject.Nancy.dll" target="bin/LightInject.Nancy.dll" />
+    <file src="LightInject.dll" target="bin/LightInject.dll" />
+    <file src="Microsoft.Web.XmlTransform.dll" target="bin/Microsoft.Web.XmlTransform.dll" />
+    <file src="Nancy.Hosting.Self.dll" target="bin/Nancy.Hosting.Self.dll" />
+    <file src="Nancy.dll" target="bin/Nancy.dll" />
+    <file src="Newtonsoft.Json.dll" target="bin/Newtonsoft.Json.dll" />
+    <file src="NuGet.Core.dll" target="bin/NuGet.Core.dll" />
+    <file src="Stratos.exe" target="bin/Stratos.exe" />
+    <file src="Stratos.exe.config" target="bin/Stratos.exe.config" />
+    <file src="Topshelf.Linux.dll" target="bin/Topshelf.Linux.dll" />
+    <file src="Topshelf.dll" target="bin/Topshelf.dll" />
+    <file src="log4net.dll" target="bin/log4net.dll" />
+   </files>
+</package>
