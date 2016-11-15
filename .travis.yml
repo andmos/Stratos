@@ -6,4 +6,5 @@ before_script:
   - chmod +x build.sh
 script:
   - ./build.sh
-  - mono .nuget/nuget.exe pack chocolatey/Stratos.nuspec
+  - cp chocolatey/*.ps1 src/bin/Release/
+  - mono .nuget/nuget.exe pack chocolatey/Stratos.nuspec -BasePath src/bin/Release/

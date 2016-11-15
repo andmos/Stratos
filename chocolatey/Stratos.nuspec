@@ -15,8 +15,20 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />
-    <file src="chocolateyUninstall.ps1" target="tools\chocolateyUninstall.ps1" />
-    <file src="../src/bin/Release/" target="bin" />
+    <file src="chocolateyInstall.ps1" target="tools/chocolateyInstall.ps1" />
+    <file src="chocolateyUninstall.ps1" target="tools/chocolateyUninstall.ps1" />
+    
+    <file src="LightInject.Nancy.dll" target="bin/LightInject.Nancy.dll" />
+    <file src="LightInject.dll" target="bin/LightInject.dll" />
+    <file src="Microsoft.Web.XmlTransform.dll" target="bin/Microsoft.Web.XmlTransform.dll" />
+    <file src="Nancy.Hosting.Self.dll" target="bin/Nancy.Hosting.Self.dll" />
+    <file src="Nancy.dll" target="bin/Nancy.dll" />
+    <file src="Newtonsoft.Json.dll" target="bin/Newtonsoft.Json.dll" />
+    <file src="NuGet.Core.dll" target="bin/NuGet.Core.dll" />
+    <file src="Stratos.exe" target="bin/Stratos.exe" />
+    <file src="Stratos.exe.config" target="bin/Stratos.exe.config" />
+    <file src="Topshelf.Linux.dll" target="bin/Topshelf.Linux.dll" />
+    <file src="Topshelf.dll" target="bin/Topshelf.dll" />
+    <file src="log4net.dll" target="bin/log4net.dll" />
    </files>
 </package>
