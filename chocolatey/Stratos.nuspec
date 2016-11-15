@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>stratos</id>
+    <version>0.1.0</version>
+    <title>Stratos</title>
+    <authors>Andreas Mosti</authors>
+    <owners>Andreas Mosti</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</description>
+    <summary>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</summary>
+    <language>nb-NO</language>
+    <tags>Stratos NuGet Chocolatey service</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="chocolateyInstall.ps1" target="tools\chocolateyInstall.ps1" />
+    <file src="chocolateyUninstall.ps1" target="tools\chocolateyUninstall.ps1" />
+    <file src="../src/bin/Release/" target="bin" />
+   </files>
+</package>
