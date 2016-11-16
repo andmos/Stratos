@@ -8,3 +8,4 @@ Stratos is a dead simple HTTP API that provides this information for you - makin
 [![Build Status](https://travis-ci.org/andmos/Stratos.svg?branch=master)](https://travis-ci.org/andmos/Stratos)
 
 > Stratos is a chocolate made by Nidar in Trondheim, Norway. Please don't sue me for the name of this project, I love that chocolate.
+
