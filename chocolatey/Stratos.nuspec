@@ -28,6 +28,7 @@
     <file src="Stratos.exe" target="bin/Stratos.exe" />
     <file src="Stratos.exe.config" target="bin/Stratos.exe.config" />
     <file src="Topshelf.Linux.dll" target="bin/Topshelf.Linux.dll" />
+    <file src="Topshelf.Nancy.dll" target="bin/Topshelf.Nancy.dll" />
     <file src="Topshelf.dll" target="bin/Topshelf.dll" />
     <file src="log4net.dll" target="bin/log4net.dll" />
    </files>
