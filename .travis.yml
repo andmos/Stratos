@@ -1,10 +1,8 @@
 language: csharp
 
 before_script: 
-  - mkdir -p .nuget
-  - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe  
   - chmod +x build.sh
+  - chmod +x package.sh
 script:
   - ./build.sh
-  - cp chocolatey/*.ps1 src/bin/Release/
-  - mono .nuget/nuget.exe pack chocolatey/Stratos.nuspec -BasePath src/bin/Release/
+  - ./package.sh
