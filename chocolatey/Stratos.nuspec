@@ -8,7 +8,7 @@
     <owners>Andreas Mosti</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</description>
-    <summary>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</summary>
+    <summary>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host. </summary>
     <language>nb-NO</language>
     <tags>Stratos NuGet Chocolatey service</tags>
     <dependencies>
