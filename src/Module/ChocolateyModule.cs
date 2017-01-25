@@ -9,7 +9,8 @@ namespace Stratos.Module
 
 		public ChocolateyModule(IChocolateyService chocoService) : base("/api/")
 		{
-			StaticConfiguration.DisableErrorTraces = false;
+            this.EnableCors();
+            StaticConfiguration.DisableErrorTraces = false;
 			m_chocoService = chocoService; 
 
 			Get["/chocoVersion"] = parameters =>
@@ -17,6 +18,7 @@ namespace Stratos.Module
 				var chocoVersion = m_chocoService.ChocoVersion();
 			    return Response.AsJson(chocoVersion != Constants.EmptySemanticVersion ? chocoVersion.ToNormalizedString() : "Can't find Chocolatey Version, is Chocolatey installed or missing from path?");
 			};
+          
 
 			Get["/chocoPackages"] = parameters =>
 			{
