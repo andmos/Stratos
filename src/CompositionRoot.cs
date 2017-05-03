@@ -10,6 +10,7 @@ namespace Stratos
 		{
 			serviceRegistry.Register<ICommandService, CommandService>(new PerContainerLifetime());
 			serviceRegistry.Register<IChocolateyService>(factory => new ChocolateyService(factory.GetInstance<ICommandService>()));
-		}
+            serviceRegistry.RegisterAssembly("*.Stratos.Plugin.dll");
+        }
 	}
 }
