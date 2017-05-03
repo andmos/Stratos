@@ -4,7 +4,7 @@ using Nancy;
 using Nancy.Routing;
 using Stratos.Model;
 
-namespace Stratos
+namespace Stratos.Module
 {
 	public class IndexModule : NancyModule
 	{
@@ -12,6 +12,7 @@ namespace Stratos
 
 		public IndexModule(IRouteCacheProvider routeCache) : base("/api/")
 		{
+            this.EnableCors();
 			m_routeCache = routeCache;
 			Get["/"] = parameters =>
 			{
