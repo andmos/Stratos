@@ -5,20 +5,20 @@ namespace Stratos.Module
 {
 	public class ChocolateyModule : NancyModule
 	{
-		private readonly IChocolateyService m_chocoService; 
+		private readonly IChocolateyService m_chocoService;
 
 		public ChocolateyModule(IChocolateyService chocoService) : base("/api/")
 		{
             this.EnableCors();
             StaticConfiguration.DisableErrorTraces = false;
-			m_chocoService = chocoService; 
+			m_chocoService = chocoService;
 
 			Get["/chocoVersion"] = parameters =>
 			{
 				var chocoVersion = m_chocoService.ChocoVersion();
-			    return Response.AsJson(chocoVersion != Constants.EmptySemanticVersion ? chocoVersion.ToNormalizedString() : "Can't find Chocolatey Version, is Chocolatey installed or missing from path?");
+				return Response.AsJson(chocoVersion != Constants.EmptySemanticVersion ? chocoVersion.ToNormalizedString() : "Can't find Chocolatey Version, is Chocolatey installed or missing from path?");
 			};
-          
+
 
 			Get["/chocoPackages"] = parameters =>
 			{

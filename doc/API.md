@@ -11,3 +11,6 @@ Stratos HTTP API
 
     /api/chocoPackages
     # Returns JSON with all installed chocolatey packages and versions.
+
+    /api/ 
+    # Returns list of all available routes. 

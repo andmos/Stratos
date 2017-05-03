@@ -37,6 +37,7 @@
     <Compile Include="Module\TestChocolateyModule.cs" />
     <Compile Include="Module\TestableLightInjectNancyBootstrapper.cs" />
     <Compile Include="Module\TestableCommandServiceMock.cs" />
+    <Compile Include="Module\TestIndexModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="xunit.abstractions">

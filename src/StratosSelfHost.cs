@@ -1,16 +1,16 @@
-﻿using System;
+﻿
 namespace Stratos
 {
 	public class StratosSelfHost
 	{
-		public bool Start() 
+		public bool Start()
 		{
-			return true; 
+			return true;
 		}
 
-		public bool Stop() 
+		public bool Stop()
 		{
-			return false; 
+			return false;
 		}
 
 	}

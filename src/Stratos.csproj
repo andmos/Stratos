@@ -80,6 +80,8 @@
     <Compile Include="Service\ICommandService.cs" />
     <Compile Include="CompositionRoot.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Module\IndexModule.cs" />
+    <Compile Include="Model\IndexModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
