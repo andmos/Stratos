@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>stratos</id>
-    <version>0.1.1</version>
+    <version>0.2.0</version>
     <title>Stratos</title>
     <authors>Andreas Mosti</authors>
     <owners>Andreas Mosti</owners>
@@ -17,7 +17,7 @@
   <files>
     <file src="chocolateyInstall.ps1" target="tools/chocolateyInstall.ps1" />
     <file src="chocolateyUninstall.ps1" target="tools/chocolateyUninstall.ps1" />
-    
+
     <file src="LightInject.Nancy.dll" target="bin/LightInject.Nancy.dll" />
     <file src="LightInject.dll" target="bin/LightInject.dll" />
     <file src="Microsoft.Web.XmlTransform.dll" target="bin/Microsoft.Web.XmlTransform.dll" />
