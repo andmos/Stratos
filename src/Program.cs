@@ -9,7 +9,7 @@ namespace Stratos
 		static void Main(string[] args)
 		{
 			var host = HostFactory.New(x =>
-			{
+        {
 				x.UseLinuxIfAvailable();
 				x.Service<StratosSelfHost>(s =>
 				{
@@ -23,13 +23,13 @@ namespace Stratos
 						c.OpenFirewallPortsOnInstall(firewallRuleName: "StratosService");
 					});
 				});
-				
+
 				x.StartAutomatically();
 				x.SetServiceName("StratosService");
 				x.SetDisplayName("StratosService");
 				x.SetDescription("StratosService");
 				x.RunAsNetworkService();
-			
+
 			});
 			host.Run();
 		}
