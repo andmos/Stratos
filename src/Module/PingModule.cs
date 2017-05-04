@@ -6,6 +6,7 @@ namespace Stratos.Module
 	{
 		public PingModule() : base("/api/")
 		{
+            this.EnableCors();
 			Get["/ping"] = parameters =>
 			{
 				var response = (Response)"pong";
