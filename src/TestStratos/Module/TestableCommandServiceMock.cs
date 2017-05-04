@@ -6,7 +6,7 @@ namespace TestStratos
 	public class TestableCommandServiceMock : ICommandService
 	{
 
-		private string TestListOfPackagesWithInvalidPackage => @"packageA 1.1.0
+		private string TestListOfPackagesWithInvalidPackage => @"packageA|1.1.0
 			packageB|2.0.0
 			packageB|v2.0.0
 			packageC|3.1.0";

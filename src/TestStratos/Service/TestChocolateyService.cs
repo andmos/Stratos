@@ -10,14 +10,14 @@ namespace TestStratos
 	public class TestChocolateyService
 	{
 		private Mock<ICommandService> commandServiceMock;
-		private string TestListOfPackages => @"packageA 1.1.0
-			packageB 2.0.0
-			packageC 3.1.0";
+		private string TestListOfPackages => @"packageA|1.1.0
+			packageB|2.0.0
+			packageC|3.1.0";
 
-		private string TestListOfPackagesWithInvalidPackage => @"packageA 1.1.0
-			packageB 2.0.0
-			packageB v2.0.0
-			packageC 3.1.0";
+		private string TestListOfPackagesWithInvalidPackage => @"packageA|1.1.0
+			packageB|2.0.0
+			packageB|v2.0.0
+			packageC|3.1.0";
 
 
 
@@ -63,7 +63,7 @@ namespace TestStratos
 		public void InstalledPackages_GivenCorrectListOfPackages_ReturnsCorrectNumberOfNuGetPackageObjects() 
 		{
 			commandServiceMock = new Mock<ICommandService>();
-			commandServiceMock.Setup(m => m.Execute("choco", "list -lo", true, true)).Returns(TestListOfPackages);
+			commandServiceMock.Setup(m => m.Execute("choco", "list -lo -r", true, true)).Returns(TestListOfPackages);
 			var chocolateyService = new ChocolateyService(commandServiceMock.Object);
 			var expectedNumberOfPacakge = 3;
 
@@ -78,7 +78,7 @@ namespace TestStratos
 		public void InstalledPacakges_GivenListOfPacakgesWithCorruptVersion_ReturnsCorrectPackages()
 		{
 			commandServiceMock = new Mock<ICommandService>();
-			commandServiceMock.Setup(m => m.Execute("choco", "list -lo", true, true)).Returns(TestListOfPackagesWithInvalidPackage);
+			commandServiceMock.Setup(m => m.Execute("choco", "list -lo -r", true, true)).Returns(TestListOfPackagesWithInvalidPackage);
 			var chocolateyService = new ChocolateyService(commandServiceMock.Object);
 			var expectedNumberOfPacakge = 3;
 
@@ -91,7 +91,7 @@ namespace TestStratos
 		public void InstalledPacakges_GivenCorrectListOfPacakge_PacakgesHasCorrectSemver() 
 		{
 			commandServiceMock = new Mock<ICommandService>();
-			commandServiceMock.Setup(m => m.Execute("choco", "list -lo", true, true)).Returns(TestListOfPackages);
+			commandServiceMock.Setup(m => m.Execute("choco", "list -lo -r", true, true)).Returns(TestListOfPackages);
 			var chocolateyService = new ChocolateyService(commandServiceMock.Object);
 			var expectedSemver = SemanticVersion.Parse("1.1.0");
 
