@@ -33,7 +33,7 @@ namespace Stratos.Service
 		{
 			try
 			{
-				return ParsePackagesOutput(m_command.Execute("choco", "list -lo", true, true));
+				return ParsePackagesOutput(m_command.Execute("choco", "list -lo -r", true, true));
 			}
 			catch (Exception ex) 
 			{
@@ -41,13 +41,14 @@ namespace Stratos.Service
 			}
 		}
 
+
 		private IEnumerable<NuGetPackage> ParsePackagesOutput(string outputString) 
 		{
 			var packages = new List<NuGetPackage>();
 			var rawPackageOutput = outputString.Split('\n');
 			foreach (var textString in rawPackageOutput)
 			{
-                var packageSplit = textString.Split(' ');
+                var packageSplit = textString.Split('|');
                 try
 			    {
                     packages.Add(new NuGetPackage { PackageName = packageSplit[0], Version = SemanticVersion.Parse(packageSplit[1]) });
