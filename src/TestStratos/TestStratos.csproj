@@ -94,6 +94,10 @@
       <Project>{DC430AFA-9F91-4429-A0FA-77867D98B718}</Project>
       <Name>Stratos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestStratosTestable.Stratos.Plugin\TestStratosTestable.Stratos.Plugin.csproj">
+      <Project>{0647DEA6-5D4D-4679-AC5D-F870622E12B5}</Project>
+      <Name>TestStratosTestable.Stratos.Plugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
