@@ -34,6 +34,7 @@ namespace TestStratos
 			{
 				with.HttpRequest(); 
 			});
+
 			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
 			Assert.True(result.Body.AsString().Contains(@"/api"));
 		}
@@ -46,9 +47,25 @@ namespace TestStratos
 			{
 				with.HttpRequest();
 			});
+
 			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
 			Assert.True(result.Body.AsString().Contains(@"/ping"));
 		}
+
+		[Fact]
+		public void indexModule_givenPluginModule_ReturnsModuleEndpointInIndex()
+		{
+			var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
+
+			var result = browser.Get("/api/testPlugin", with =>
+			{
+				with.HttpRequest();
+			});
+
+			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+			Assert.True(result.Body.AsString().Contains("Hello From TestPlugin!"));
+		}
+
 
 
 	}
