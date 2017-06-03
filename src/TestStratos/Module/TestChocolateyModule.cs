@@ -1,12 +1,8 @@
-﻿using System;
-using Newtonsoft.Json;
-using System.Linq;
-using NuGet;
+﻿using NuGet;
 using Nancy;
 using Nancy.Testing;
 using Xunit;
-using System.Collections.Generic;
-using Stratos.Model;
+
 
 namespace TestStratos
 {
@@ -25,6 +21,23 @@ namespace TestStratos
 
 			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
 			Assert.Equal(expectedVersion, SemanticVersion.Parse(result.Body.DeserializeJson<string>()).ToNormalizedString());
+		}
+
+		[Fact]
+		public void chocoPackages_returnsPackagesWithSemverString() 
+		{
+			var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
+
+			var result = browser.Get("/api/chocoPackages", with =>
+			{
+				with.HttpRequest();			
+			});
+
+			var actualPackagesJson = result.Body.AsString();
+
+			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+			Assert.True(actualPackagesJson.Contains("\"minor\":1")); 
+
 		}
 
 	}
