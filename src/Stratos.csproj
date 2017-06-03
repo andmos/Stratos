@@ -64,9 +64,6 @@
     <Reference Include="Topshelf.Linux">
       <HintPath>packages\Topshelf.Linux.1.0.12.11\lib\Topshelf.Linux.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.Serialization.JsonNet">
-      <HintPath>packages\Nancy.Serialization.JsonNet.1.4.1\lib\net40\Nancy.Serialization.JsonNet.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module\NancyExtension.cs" />
