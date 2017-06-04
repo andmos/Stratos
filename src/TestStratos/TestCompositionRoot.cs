@@ -1,5 +1,4 @@
 ﻿using System;
-using NuGet;
 using LightInject;
 using Moq;
 using Stratos.Service;

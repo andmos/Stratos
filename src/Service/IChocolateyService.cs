@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using NuGet;
+using Stratos.Helper;
 using Stratos.Model;
 
 namespace Stratos.Service

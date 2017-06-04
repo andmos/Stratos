@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using NuGet;
-using NuGet.Resources;
+using Stratos.Helper;
 using Stratos.Model;
 
 namespace Stratos.Service
@@ -50,8 +49,9 @@ namespace Stratos.Service
 			{
                 var packageSplit = textString.Split('|');
                 try
-			    {
-                    packages.Add(new NuGetPackage { PackageName = packageSplit[0], Version = SemanticVersion.Parse(packageSplit[1]) });
+                {
+                    var semanticVersion = SemanticVersion.Parse(packageSplit[1]);
+                    packages.Add(new NuGetPackage { PackageName = packageSplit[0], Version = new PackageVersion() { Version = semanticVersion.Version, SpecialVersion = semanticVersion.SpecialVersion}  });
                 }
 			    catch (Exception ex)
 			    {

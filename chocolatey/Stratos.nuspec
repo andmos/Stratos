@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>stratos</id>
-    <version>0.3.2</version>
+    <version>0.4.1</version>
     <title>Stratos</title>
     <authors>Andreas Mosti</authors>
     <owners>Andreas Mosti</owners>
@@ -22,9 +22,9 @@
     <file src="LightInject.dll" target="bin/LightInject.dll" />
     <file src="Microsoft.Web.XmlTransform.dll" target="bin/Microsoft.Web.XmlTransform.dll" />
     <file src="Nancy.Hosting.Self.dll" target="bin/Nancy.Hosting.Self.dll" />
+    <file src="Nancy.Serialization.JsonNet.dll" target="bin/Nancy.Serialization.JsonNet.dll" />
     <file src="Nancy.dll" target="bin/Nancy.dll" />
     <file src="Newtonsoft.Json.dll" target="bin/Newtonsoft.Json.dll" />
-    <file src="NuGet.Core.dll" target="bin/NuGet.Core.dll" />
     <file src="Stratos.exe" target="bin/Stratos.exe" />
     <file src="Stratos.exe.config" target="bin/Stratos.exe.config" />
     <file src="Topshelf.Linux.dll" target="bin/Topshelf.Linux.dll" />
