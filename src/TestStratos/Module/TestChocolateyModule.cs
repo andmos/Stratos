@@ -2,7 +2,10 @@
 using Nancy;
 using Nancy.Testing;
 using Xunit;
-
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using System.Linq;
+using System;
 
 namespace TestStratos
 {
@@ -27,16 +30,38 @@ namespace TestStratos
 		public void chocoPackages_returnsPackagesWithSemverString() 
 		{
 			var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
+			int expectedNumberOfSemanticVersionObjects = 3; 
 
 			var result = browser.Get("/api/chocoPackages", with =>
 			{
 				with.HttpRequest();			
 			});
-
-			var actualPackagesJson = result.Body.AsString();
+				
+			var actualSemanticVersions = GetSemanticVersionFromJSON(result.Body.AsString()); 
 
 			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
-			Assert.True(actualPackagesJson.Contains("\"minor\":1")); 
+			Assert.True(actualSemanticVersions.Count() == expectedNumberOfSemanticVersionObjects); 
+		}
+
+		private IEnumerable<SemanticVersion> GetSemanticVersionFromJSON(string jsonString) 
+		{
+			var versionString = JArray.Parse(jsonString);
+
+			var semanticVersionJsonResult = new List<JToken>();
+			foreach (var jtoken in versionString) 
+			{
+				semanticVersionJsonResult.Add(jtoken["version"]["version"]);
+			}
+
+			var semanticVersions = new List<SemanticVersion>();
+
+			foreach (var jsonToken in semanticVersionJsonResult) 
+			{
+				SemanticVersion version = new SemanticVersion(major: int.Parse(jsonToken["major"].ToString()), minor: int.Parse(jsonToken["minor"].ToString()), build: int.Parse(jsonToken["build"].ToString()), revision: int.Parse(jsonToken["revision"].ToString()));
+				semanticVersions.Add(version);
+
+			}
+			return semanticVersions; 
 
 		}
 
