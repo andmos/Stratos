@@ -43,9 +43,6 @@
     <Reference Include="Microsoft.Web.XmlTransform">
       <HintPath>packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
     </Reference>
-    <Reference Include="NuGet.Core">
-      <HintPath>packages\NuGet.Core.2.12.0\lib\net40-Client\NuGet.Core.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
@@ -64,8 +61,13 @@
     <Reference Include="Topshelf.Linux">
       <HintPath>packages\Topshelf.Linux.1.0.12.11\lib\Topshelf.Linux.dll</HintPath>
     </Reference>
+    <Reference Include="Nancy.Serialization.JsonNet">
+      <HintPath>packages\Nancy.Serialization.JsonNet.1.4.1\lib\net40\Nancy.Serialization.JsonNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\CustomJsonSerializer.cs" />
+    <Compile Include="Model\PackageVersion.cs" />
     <Compile Include="Module\NancyExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,11 +84,13 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Module\IndexModule.cs" />
     <Compile Include="Model\IndexModel.cs" />
+    <Compile Include="Helper\SemanticVersion.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

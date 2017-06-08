@@ -3,6 +3,10 @@ using Stratos.Service;
 using LightInject;
 using LightInject.Nancy;
 using Moq;
+using Nancy.Serialization.JsonNet;
+using Nancy;
+using Newtonsoft.Json;
+using Stratos.Helper;
 
 namespace TestStratos
 {
@@ -14,9 +18,15 @@ namespace TestStratos
 
 			container.Register<ICommandService, TestableCommandServiceMock>(new PerContainerLifetime());
 			container.Register<IChocolateyService>(factory => new ChocolateyService(factory.GetInstance<ICommandService>()));
-			container.RegisterAssembly("*.Stratos.Plugin.dll");
+			container.Register<JsonNetSerializer, Nancy.Serialization.JsonNet.JsonNetSerializer>();
+            container.Register<JsonSerializer, CustomJsonSerializer>();
+            container.RegisterAssembly("*.Stratos.Plugin.dll");
 
 			return container;
 		}
-	}
+
+       
+           
+        
+    }
 }
