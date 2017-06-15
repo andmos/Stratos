@@ -1,13 +1,8 @@
-﻿using System;
-using Newtonsoft.Json;
-using System.Linq;
-using Nancy;
+﻿using Nancy;
 using Nancy.Testing;
 using Xunit;
-using System.Collections.Generic;
-using Stratos.Model;
 
-namespace TestStratos
+namespace TestStratos.Module
 {
 	public class TestIndexModule
 	{
@@ -64,6 +59,5 @@ namespace TestStratos
 			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
 			Assert.True(result.Body.AsString().Contains("Hello From TestPlugin!"));
 		}
-
 	}
 }

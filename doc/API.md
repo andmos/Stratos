@@ -12,5 +12,8 @@ Stratos HTTP API
     /api/chocoPackages
     # Returns JSON with all installed chocolatey packages and versions.
 
-    /api/ 
-    # Returns list of all available routes. 
+    /api/failedChocoPackages
+    # Returns JSON with all failed chocolatey packages (failed packages are placed in the `lib-bad` folder)
+
+    /api/
+    # Returns list of all available routes.

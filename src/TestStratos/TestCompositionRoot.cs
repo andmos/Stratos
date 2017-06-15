@@ -1,5 +1,4 @@
-﻿using System;
-using LightInject;
+﻿using LightInject;
 using Moq;
 using Stratos.Service;
 
@@ -19,7 +18,8 @@ namespace TestStratos
 			testableCommandMock.Setup(m => m.Execute("choco", "--version", true, true)).Returns("10.0.11");
 
 			serviceRegistry.RegisterInstance<ICommandService>(testableCommandMock.Object);
-			serviceRegistry.Register<IChocolateyService>(factory => new ChocolateyService(factory.GetInstance<ICommandService>()));
+            serviceRegistry.RegisterInstance<IFileSystemService>(new Mock<IFileSystemService>().Object);
+            serviceRegistry.Register<IChocolateyService>(factory => new ChocolateyService(factory.GetInstance<ICommandService>(), factory.GetInstance<IFileSystemService>()));
 		}
 	}
 }

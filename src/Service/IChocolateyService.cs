@@ -7,6 +7,7 @@ namespace Stratos.Service
 	public interface IChocolateyService
 	{
 		SemanticVersion ChocoVersion();
-		IEnumerable<NuGetPackage> InstalledPackages(); 
-	}
+		IEnumerable<NuGetPackage> InstalledPackages();
+        IEnumerable<NuGetPackage> FailedPackages();
+    }
 }

@@ -1,6 +1,10 @@
-﻿using Nancy;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Nancy;
 using Nancy.Testing;
 using Stratos.Helper;
+using Stratos.Model;
 using Xunit;
 
 namespace TestStratos.Module
@@ -22,8 +26,6 @@ namespace TestStratos.Module
 			Assert.Equal(expectedVersion, SemanticVersion.Parse(result.Body.DeserializeJson<string>()).ToNormalizedString());
 		}
 
-
-
 		[Fact]
 		public void chocoPackages_returnsPackagesWithSemverString() 
 		{
@@ -41,6 +43,19 @@ namespace TestStratos.Module
 			Assert.True(resultJson.Contains("minor"));
 		}
 
+        [Fact]
+        public void FailedChocoPackages_ReturnsPackagesWithSemverString()
+        {
+            var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
 
-	}
+            var result = browser.Get("/api/failedChocoPackages", with =>
+            {
+                with.HttpRequest();
+            });
+
+            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            var failedPackages = result.Body.DeserializeJson<IEnumerable<NuGetPackage>>();
+            Assert.Equal(2, failedPackages.Count());
+        }
+    }
 }
