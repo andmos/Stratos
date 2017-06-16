@@ -1,5 +1,4 @@
-﻿using System;
-using LightInject;
+﻿using LightInject;
 using Stratos.Service;
 
 namespace Stratos
@@ -9,7 +8,8 @@ namespace Stratos
 		public void Compose(IServiceRegistry serviceRegistry)
 		{
 			serviceRegistry.Register<ICommandService, CommandService>(new PerContainerLifetime());
-			serviceRegistry.Register<IChocolateyService>(factory => new ChocolateyService(factory.GetInstance<ICommandService>()));
+            serviceRegistry.Register<IFileSystemService, FileSystemService>(new PerContainerLifetime());
+            serviceRegistry.Register<IChocolateyService>(factory => new ChocolateyService(factory.GetInstance<ICommandService>(), factory.GetInstance<IFileSystemService>()));
             serviceRegistry.RegisterAssembly("*.Stratos.Plugin.dll");
         }
 	}

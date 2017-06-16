@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>packageA</id>
+    <version>1.2.3</version>
+    <title>packageA</title>
+    <authors>DIPS ASA</authors>
+    <owners>DIPS ASA</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>test package</description>
+    <summary />
+    <releaseNotes />
+    <copyright>Copyright © DIPS ASA 2017</copyright>
+  </metadata>
+</package>

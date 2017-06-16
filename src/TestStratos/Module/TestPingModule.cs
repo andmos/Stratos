@@ -1,9 +1,8 @@
-﻿using System;
-using Nancy;
+﻿using Nancy;
 using Nancy.Testing;
 using Xunit;
 
-namespace TestStratos
+namespace TestStratos.Module
 {
 	public class TestPingModule
 	{

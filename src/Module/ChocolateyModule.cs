@@ -26,6 +26,12 @@ namespace Stratos.Module
 				return Response.AsJson(chocoPackages);
 			};
 
-		}
+            Get["/failedChocoPackages"] = parameters =>
+            {
+                var failedPackages = m_chocoService.FailedPackages();
+                return Response.AsJson(failedPackages);
+            };
+
+        }
 	}
 }
