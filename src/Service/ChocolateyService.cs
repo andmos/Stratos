@@ -51,7 +51,7 @@ namespace Stratos.Service
             Console.WriteLine(chocolateyBadLibPath);
 	        return !m_fileSystem.DirectoryExists(chocolateyBadLibPath)
                     ? new List<NuGetPackage>()
-                    : m_fileSystem.GetDirectories(chocolateyBadLibPath).Select(p => new NuGetPackage { PackageName = Path.GetFileName(p), Version = GetPackageVersion(p)});
+                    : m_fileSystem.GetDirectories(chocolateyBadLibPath).Select(p => new NuGetPackage { PackageName = Path.GetFileName(p), Version = GetPackageVersionFromNuspecFile(p)});
 	    }
 
 	    private IEnumerable<NuGetPackage> ParsePackagesOutput(string outputString) 
@@ -75,7 +75,7 @@ namespace Stratos.Service
 			return packages;
 		}
 
-	    private PackageVersion GetPackageVersion(string packagePath)
+		private PackageVersion GetPackageVersionFromNuspecFile(string packagePath)
 	    {
 	        var nuspecPath = Path.Combine(packagePath, $"{Path.GetFileName(packagePath)}.nuspec");
 	        if (m_fileSystem.FileExists(nuspecPath))
