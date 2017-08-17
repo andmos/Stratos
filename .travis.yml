@@ -1,6 +1,4 @@
 language: csharp
-mono: 
-    - 5.0.1.1
 
 before_script: 
   - chmod +x build.sh
