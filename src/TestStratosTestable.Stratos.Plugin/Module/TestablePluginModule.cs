@@ -1,16 +1,13 @@
-﻿using System;
-using Nancy;
+﻿using Nancy;
+using TestStratosTestable.Stratos.Plugin.Service;
 
-namespace TestStratosTestable.Stratos.Plugin
+namespace TestStratosTestable.Stratos.Plugin.Module
 {
 public class TestablePluginModule : NancyModule
 {
-	public TestablePluginModule() : base("/api/")
-	{
-		Get["/testPlugin"] = parameters =>
-		{
-			return "Hello From TestPlugin!";
-		};
-	}	
+	    public TestablePluginModule(IMyService myService) : base("/api/")
+	    {
+		    Get["/testPlugin"] = parameters => myService.GetValue();
+	    }	
 	}
 }
