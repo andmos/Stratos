@@ -91,7 +91,6 @@
     <Compile Include="Model\IndexModel.cs" />
     <Compile Include="Helper\SemanticVersion.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
