@@ -1,14 +1,13 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
-using NuGet;
 using Nancy;
 using Nancy.Testing;
-using Xunit;
-using System.Collections.Generic;
+using Stratos.Helper;
 using Stratos.Model;
+using Xunit;
 
-namespace TestStratos
+namespace TestStratos.Module
 {
 	public class TestChocolateyModule
 	{
@@ -27,5 +26,36 @@ namespace TestStratos
 			Assert.Equal(expectedVersion, SemanticVersion.Parse(result.Body.DeserializeJson<string>()).ToNormalizedString());
 		}
 
-	}
+		[Fact]
+		public void chocoPackages_returnsPackagesWithSemverString() 
+		{
+			var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
+
+			var result = browser.Get("/api/chocoPackages", with =>
+			{
+				with.HttpRequest();			
+			});
+
+			var resultJson = result.Body.AsString(); 
+
+			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+			Assert.True(resultJson.Contains("major"));
+			Assert.True(resultJson.Contains("minor"));
+		}
+
+        [Fact]
+        public void FailedChocoPackages_ReturnsPackagesWithSemverString()
+        {
+            var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
+
+            var result = browser.Get("/api/failedChocoPackages", with =>
+            {
+                with.HttpRequest();
+            });
+
+            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            var failedPackages = result.Body.DeserializeJson<IEnumerable<NuGetPackage>>();
+            Assert.Equal(2, failedPackages.Count());
+        }
+    }
 }

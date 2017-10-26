@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using NuGet;
+using Stratos.Helper;
 using Stratos.Model;
 
 namespace Stratos.Service
@@ -7,6 +7,7 @@ namespace Stratos.Service
 	public interface IChocolateyService
 	{
 		SemanticVersion ChocoVersion();
-		IEnumerable<NuGetPackage> InstalledPackages(); 
-	}
+		IEnumerable<NuGetPackage> InstalledPackages();
+        IEnumerable<NuGetPackage> FailedPackages();
+    }
 }

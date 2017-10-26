@@ -1,7 +1,6 @@
-﻿using System;
-using Stratos.Service;
+﻿using Stratos.Service;
 
-namespace TestStratos
+namespace TestStratos.Module
 {
 	public class TestableCommandServiceMock : ICommandService
 	{
