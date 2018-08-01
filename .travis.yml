@@ -6,3 +6,7 @@ before_script:
 script:
   - ./build.sh
   - ./package.sh
+after_script:
+  - if [ "$TRAVIS_PULL_REQUEST" == false ] && [ "$TRAVIS_BRANCH" == "master" ]; then 
+    nuget push stratos.*.nupkg -ApiKey $APIKey -Source https://push.chocolatey.org/ ;
+    fi
