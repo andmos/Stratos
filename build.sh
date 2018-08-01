@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 nuget restore src/Stratos.sln
 msbuild /property:Configuration=Release src/Stratos.sln 
 
