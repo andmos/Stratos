@@ -6,6 +6,7 @@
     <title>Stratos</title>
     <authors>Andreas Mosti</authors>
     <owners>Andreas Mosti</owners>
+    <projectUrl>https://github.com/andmos/Stratos</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</description>
     <summary>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host. </summary>
