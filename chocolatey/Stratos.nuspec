@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>stratos</id>
-    <version>0.6.3</version>
+    <version>0.6.4</version>
     <title>Stratos</title>
     <authors>Andreas Mosti</authors>
     <owners>Andreas Mosti</owners>
@@ -20,6 +20,8 @@
   <files>
     <file src="chocolateyInstall.ps1" target="tools/chocolateyInstall.ps1" />
     <file src="chocolateyUninstall.ps1" target="tools/chocolateyUninstall.ps1" />
+    <file src="LICENSE" target="tools/LICENSE.txt" />
+    <file src="VERIFICATION" target="tools/VERIFICATION.txt" />
 
     <file src="LightInject.Nancy.dll" target="bin/LightInject.Nancy.dll" />
     <file src="LightInject.dll" target="bin/LightInject.dll" />
