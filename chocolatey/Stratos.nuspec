@@ -11,6 +11,7 @@
     <description>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host.</description>
     <summary>Stratos, a simple HTTP service to list out installed NuGet and Chocolatey packages from a host. </summary>
     <language>nb-NO</language>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <tags>Stratos NuGet Chocolatey service</tags>
     <dependencies>
     </dependencies>
