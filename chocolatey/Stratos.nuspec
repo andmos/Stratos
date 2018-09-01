@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>stratos</id>
-    <version>0.6.2</version>
+    <version>0.6.3</version>
     <title>Stratos</title>
     <authors>Andreas Mosti</authors>
     <owners>Andreas Mosti</owners>
@@ -14,6 +14,7 @@
     <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
     <tags>Stratos NuGet Chocolatey service</tags>
     <dependencies>
+        <dependency id="dotnet4.5.2" version="4.5.2.20140902" />
     </dependencies>
   </metadata>
   <files>
