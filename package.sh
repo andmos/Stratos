@@ -4,10 +4,10 @@ set -e
 RELEASEFOLDER=src/bin/Release
 
 cp chocolatey/*.ps1 $RELEASEFOLDER
-cp chocolatey/VERIFICATION $RELEASEFOLDER
-cp LICENSE src/bin/Release/
+cp chocolatey/VERIFICATION.txt $RELEASEFOLDER
+cp LICENSE.txt src/bin/Release/
 
-echo "$(basename $(ls $RELEASEFOLDER/*.dll))" >> $RELEASEFOLDER/VERIFICATION
-echo "$(basename $(ls $RELEASEFOLDER/*.exe))" >> $RELEASEFOLDER/VERIFICATION
+echo "$(basename $(ls $RELEASEFOLDER/*.dll))" >> $RELEASEFOLDER/VERIFICATION.txt
+echo "$(basename $(ls $RELEASEFOLDER/*.exe))" >> $RELEASEFOLDER/VERIFICATION.txt
 
 nuget pack chocolatey/Stratos.nuspec -BasePath $RELEASEFOLDER
