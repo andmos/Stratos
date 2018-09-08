@@ -7,6 +7,8 @@ Stratos is a dead simple HTTP API that provides this information for you - makin
 
 [![Build Status](https://travis-ci.org/andmos/Stratos.svg?branch=master)](https://travis-ci.org/andmos/Stratos)
 
+![Chocolatey](https://img.shields.io/chocolatey/v/stratos.svg)
+
 Create the installable Chocolatey package: `$ docker run -v $(pwd):/workspace -w "/workspace" -it mono ./build.sh &&
 ./package.sh`
 
