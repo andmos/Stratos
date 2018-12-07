@@ -49,20 +49,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="LightInject, Version=4.1.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LightInject.4.1.3\lib\net45\LightInject.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="LightInject.xUnit2">
       <HintPath>..\packages\LightInject.xUnit.2.0.0.5\lib\net45\LightInject.xUnit2.dll</HintPath>
-    </Reference>
-    <Reference Include="Nancy">
-      <HintPath>..\packages\Nancy.1.4.3\lib\net40\Nancy.dll</HintPath>
-    </Reference>
-    <Reference Include="LightInject.Nancy">
-      <HintPath>..\packages\LightInject.Nancy.1.1.0\lib\net45\LightInject.Nancy.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
@@ -96,6 +86,15 @@
     </Reference>
     <Reference Include="xunit.execution.desktop">
       <HintPath>..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject">
+      <HintPath>..\packages\LightInject.5.1.1\lib\net452\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.4.4\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Nancy">
+      <HintPath>..\packages\LightInject.Nancy.1.1.1\lib\net452\LightInject.Nancy.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
