@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Stratos.Helper;
+using Stratos.Logging;
 using Stratos.Model;
 
 namespace Stratos.Service
@@ -13,12 +14,15 @@ namespace Stratos.Service
 
         private readonly ICommandService m_command;
         private readonly IFileSystemService m_fileSystem;
+        private readonly ILog m_logger;
 
-        public ChocolateyService(ICommandService command, IFileSystemService fileSystem) 
+        public ChocolateyService(ICommandService command, IFileSystemService fileSystem, ILogFactory logger) 
 		{
 			m_command = command;
 		    m_fileSystem = fileSystem;
-		}
+            m_logger = logger.GetLogger(GetType());
+
+        }
 
 		public SemanticVersion ChocoVersion()
 		{
@@ -29,7 +33,10 @@ namespace Stratos.Service
 			}
 			catch (Exception ex)
 			{
-				return Constants.EmptySemanticVersion;
+				Console.WriteLine(ex);
+                m_logger.Warning("Could not parse local chocolatey version. ", ex);
+
+                return Constants.EmptySemanticVersion;
 			}
 		}
 
@@ -41,6 +48,7 @@ namespace Stratos.Service
 			}
 			catch (Exception ex) 
 			{
+                m_logger.Error("Error while executing choco list", ex);
 				return new List<NuGetPackage>(); 
 			}
 		}
@@ -48,7 +56,7 @@ namespace Stratos.Service
 	    public IEnumerable<NuGetPackage> FailedPackages()
 	    {
 	        var chocolateyBadLibPath = Path.Combine(ChocolateyPath, "lib-bad");
-            Console.WriteLine(chocolateyBadLibPath);
+            
 	        return !m_fileSystem.DirectoryExists(chocolateyBadLibPath)
                     ? new List<NuGetPackage>()
                     : m_fileSystem.GetDirectories(chocolateyBadLibPath).Select(p => new NuGetPackage { PackageName = Path.GetFileName(p), Version = GetPackageVersionFromNuspecFile(p)});
@@ -68,7 +76,7 @@ namespace Stratos.Service
                 }
 			    catch (Exception ex)
 			    {
-			        // Should logg this or something.
+					m_logger.Warning($"Could not reading semantic version from chocolatey.", ex);
 			    } 
 			}
 

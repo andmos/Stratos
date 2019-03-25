@@ -30,9 +30,9 @@ namespace Stratos
 				x.SetServiceName("StratosService");
 				x.SetDisplayName("StratosService");
 				x.SetDescription("StratosService");
-				x.RunAsNetworkService();
+                x.RunAsLocalSystem();
 
-			});
+        });
 
 			host.Run();
 		}

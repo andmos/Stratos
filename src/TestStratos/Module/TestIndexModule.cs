@@ -7,7 +7,7 @@ namespace TestStratos.Module
 	public class TestIndexModule
 	{
 		[Fact]
-		public void indexModule_returnsActiveNancyRoutes() 
+		public void IndexModule_returnsActiveNancyRoutes() 
 		{
 			var browser = new Browser(new DefaultNancyBootstrapper(), to => to.Accept("application/json"));
 
@@ -21,7 +21,7 @@ namespace TestStratos.Module
 		}
 
 		[Fact]
-		public void indexModule_returnsItsOwnRoute() 
+		public void IndexModule_returnsItsOwnRoute() 
 		{
 			var browser = new Browser(new DefaultNancyBootstrapper(), to => to.Accept("application/json"));
 			var result = browser.Get("/api/", with =>
@@ -34,7 +34,7 @@ namespace TestStratos.Module
 		}
 
 		[Fact]
-		public void indexModule_returnsPingRoute()
+		public void IndexModule_returnsPingRoute()
 		{
 			var browser = new Browser(new DefaultNancyBootstrapper(), to => to.Accept("application/json"));
 			var result = browser.Get("/api/", with =>
@@ -46,18 +46,7 @@ namespace TestStratos.Module
 			Assert.True(result.Body.AsString().Contains(@"/ping"));
 		}
 
-		[Fact]
-		public void indexModule_givenPluginModule_ReturnsModuleEndpointInIndex()
-		{
-			var browser = new Browser(new TestableLightInjectNancyBootstrapper(), to => to.Accept("application/json"));
 
-			var result = browser.Get("/api/testPlugin", with =>
-			{
-				with.HttpRequest();
-			});
 
-			Assert.Equal(HttpStatusCode.OK, result.StatusCode);
-			Assert.True(result.Body.AsString().Contains("Hello From TestPlugin!"));
-		}
 	}
 }
