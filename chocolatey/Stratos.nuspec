@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>stratos</id>
-    <version>0.6.5</version>
+    <version>0.7.0</version>
     <title>Stratos</title>
     <authors>Andreas Mosti</authors>
     <owners>Andreas Mosti</owners>
@@ -35,6 +35,7 @@
     <file src="Topshelf.Linux.dll" target="bin/Topshelf.Linux.dll" />
     <file src="Topshelf.Nancy.dll" target="bin/Topshelf.Nancy.dll" />
     <file src="Topshelf.dll" target="bin/Topshelf.dll" />
-    <file src="log4net.dll" target="bin/log4net.dll" />
+    <file src="NLog.dll" target="bin/NLog.dll" />
+    <file src="NLog.xml" target="bin/NLog.xml" />
    </files>
 </package>

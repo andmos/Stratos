@@ -3,7 +3,7 @@ Plugin-support
 Stratos can be extended with it's own plugins. To write a plugin, create a new project and
 reference the following NuGet-packages:
 
-```
+```csharp
 LightInject
 LightInject.Nancy
 Nancy
@@ -13,7 +13,7 @@ The project can be named whatever, but must end in `*.Stratos.Plugin.dll`.
 
 A Nancy module is needed like so:
 
-```
+```csharp
 using Demo.Stratos.Plugin.Services;
 using Nancy;
 
@@ -44,7 +44,7 @@ namespace Demo.Stratos.Plugin.Module
 
 Along side a `CompositionRoot` that implements the interfaces used by the module:
 
-```
+```csharp
 using Demo.Stratos.Plugin.Services;
 using LightInject;
 
@@ -63,3 +63,29 @@ namespace Demo.Stratos.Plugin
 And that's it. Build the new DLL's and put them along side the other Stratos DLL's and the module should be available.
 
 For working code example, [see this reference project](https://github.com/andmos/StratosPluginExample).
+
+### Logging
+Stratos provides a logger that can be injected via the IoC container: 
+
+```csharp
+using System;
+using Nancy;
+using Stratos.Logging;
+
+namespace TestStratosTestable.Stratos.Plugin.Module
+{
+    public class TestablePluginWithLogger : NancyModule
+    {
+        private readonly ILog logger;
+        public TestablePluginWithLogger(ILogFactory logFactory) : base("/api/")
+        {
+            logger = logFactory.GetLogger(GetType());
+
+            Get["/testPluginLogger"] = parameters =>
+            {
+                return logger.GetType();
+            };
+        }
+    }
+}
+```

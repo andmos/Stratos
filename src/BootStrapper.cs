@@ -2,8 +2,10 @@
 using LightInject;
 using LightInject.Nancy;
 using Nancy;
+using Nancy.Bootstrapper;
 using Newtonsoft.Json;
 using Stratos.Helper;
+using Stratos.Logging;
 
 namespace Stratos
 {
@@ -17,6 +19,14 @@ namespace Stratos
 
             existingContainer.Register<JsonSerializer, CustomJsonSerializer>();
         }
+
+		protected override void ApplicationStartup(IServiceContainer container, IPipelines pipelines)
+		{
+			var logger = container.GetInstance<ILogFactory>().GetLogger(GetType());
+			logger.Info("Application startup");
+			base.ApplicationStartup(container, pipelines);
+		}
+
 	}
 
    

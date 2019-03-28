@@ -5,12 +5,12 @@ namespace TestStratos.Module
 	public class TestableCommandServiceMock : ICommandService
 	{
 
-		private string TestListOfPackagesWithInvalidPackage => @"packageA|1.1.0
-			packageB|2.0.0
-			packageB|v2.0.0
-			packageC|3.1.0";
+        private string TestListOfPackagesWithInvalidPackage => @"packageA|1.1.0
+            packageB|2.0.0
+            packageB|v2.0.0
+            packageC|3.1.0";
 
-		public string Execute(string commandPath, string arguments, bool quiet = false, bool returnOutput = false)
+        public string Execute(string commandPath, string arguments, bool quiet = false, bool returnOutput = false)
 		{
 			if (commandPath.Equals("choco") && arguments.Equals("--version"))
 			{

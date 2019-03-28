@@ -4,7 +4,9 @@ using System.Linq;
 using System.Xml;
 using Moq;
 using Stratos.Helper;
+using Stratos.Logging;
 using Stratos.Service;
+using TestStratos.Logging;
 using TestStratos.TestData;
 using Xunit;
 
@@ -14,6 +16,7 @@ namespace TestStratos.Service
 	{
 		private readonly Mock<ICommandService> m_commandServiceMock;
         private readonly Mock<IFileSystemService> m_fileSystemServiceMock;
+        private readonly ILogFactory m_consoleLoggerFactory;
 
 	    private ChocolateyService m_cut;
 
@@ -32,8 +35,9 @@ namespace TestStratos.Service
 	    {
 	        m_commandServiceMock = new Mock<ICommandService>();
             m_fileSystemServiceMock = new Mock<IFileSystemService>();
-
-            m_cut = new ChocolateyService(m_commandServiceMock.Object, m_fileSystemServiceMock.Object);
+            m_consoleLoggerFactory = new NLogConsoleFactory();
+            
+            m_cut = new ChocolateyService(m_commandServiceMock.Object, m_fileSystemServiceMock.Object, m_consoleLoggerFactory);
         }
 
         [Fact]

@@ -36,10 +36,17 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Module\TestablePluginModule.cs" />
+    <Compile Include="Module\TestablePluginWithLogger.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Stratos.csproj">
+      <Project>{DC430AFA-9F91-4429-A0FA-77867D98B718}</Project>
+      <Name>Stratos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
