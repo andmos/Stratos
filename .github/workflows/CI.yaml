@@ -22,4 +22,4 @@ jobs:
       - name: Publish
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
-            nuget push *.nupkg -ApiKey ${{ secrets.CHOCO_KEY }} -Source https://push.chocolatey.org/ --skip-duplicate
+            nuget push *.nupkg -ApiKey ${{ secrets.CHOCO_KEY }} -Source https://push.chocolatey.org/ -SkipDuplicate
