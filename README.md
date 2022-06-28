@@ -5,7 +5,7 @@ When using [Chocolatey](https://chocolatey.org/) and tools like [Octopus Deploy]
 Stratos is a dead simple HTTP API that provides this information for you - making it great for information gathering on the entire testing cluster or just a simple check on that one team server.
 
 
-[![Build Status](https://travis-ci.org/andmos/Stratos.svg?branch=master)](https://travis-ci.org/andmos/Stratos)
+[![CI / CD](https://github.com/andmos/Stratos/actions/workflows/CI.yaml/badge.svg?branch=master)](https://github.com/andmos/Stratos/actions/workflows/CI.yaml)
 
 [![Chocolatey](https://img.shields.io/chocolatey/v/stratos.svg)](https://chocolatey.org/packages/stratos/)
 
